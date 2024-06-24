@@ -1,1 +1,6 @@
-{}
+;; env/test/resources/test-config.edn
+{
+  :db-url "jdbc:sqlite:db/test.sqlite"
+  :api-key "test-api-key"
+  :log-level "debug"
+}

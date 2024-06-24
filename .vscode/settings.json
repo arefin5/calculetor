@@ -31,5 +31,6 @@
                 ]
             }
         }
-    ]
+    ],
+    "clojure.trace.server": "messages"
 }
