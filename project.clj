@@ -1,7 +1,10 @@
 (defproject calculator "0.1.0-SNAPSHOT"
   :description "Your project description"
   :url "http://example.com"
-  :dependencies [[org.clojure/clojure "1.11.1"]
+  :dependencies [
+                 [org.clojure/clojure "1.10.1"]
+                 [selmer "1.12.25"]
+                 [org.clojure/tools.logging "1.1.0"]
                  [buddy/buddy-auth "3.0.323"]
                  [buddy/buddy-core "1.10.413"]
                  [ring/ring-core "1.9.6"]
@@ -11,7 +14,9 @@
                  [cprop "0.1.17"]
                  [mount "0.1.16"]
                  [expound "0.8.7"]
-                 [selmer "1.12.55"]] ; Add selmer dependency here
+                 [selmer "1.12.55"]
+                 
+                 ] 
   :source-paths ["src/clj"]
   :profiles {:dev {:dependencies [[com.jakemccrary/lein-test-refresh "0.24.1"]
                                   [pjstadig/humane-test-output "0.11.0"]
