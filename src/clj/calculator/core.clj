@@ -76,3 +76,14 @@
     :else
     (start-app args)))
   
+(ns calculator.core
+  (:require [calculator.handler :refer [app]]
+            [calculator.db.core :refer [create-tables]]
+            [org.httpkit.server :as http]
+            [mount.core :as mount]))
+
+(defn -main [& args]
+  (mount/start)
+  (create-tables)
+  (http/run-server app {:port 3000})
+  (println "Server is running on port 3000"))

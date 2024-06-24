@@ -38,3 +38,11 @@
 
 (defn app []
   (middleware/wrap-base #'app-routes))
+(ns calculator.handler
+  (:require [calculator.middleware :as middleware]
+            [calculator.routes.services :refer [services-routes]]
+            [reitit.ring :as ring]))
+
+(def app
+  (-> (services-routes)
+      (middleware/wrap-base)))

@@ -28,3 +28,16 @@
     (.toLocalTime v))
   (read-column-by-index [^java.sql.Time v _2 _3]
     (.toLocalTime v)))
+(ns calculator.db.core
+  (:require [clojure.java.jdbc :as jdbc]
+            [mount.core :refer [defstate]]
+            [conman.core :as conman]))
+
+(defstate ^:dynamic *db*
+  :start (conman/connect! {:jdbc-url "jdbc:sqlite:./calculator.db"})
+  :stop (conman/disconnect! *db*))
+
+(defn create-tables []
+  (jdbc/execute! *db* ["CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT, status TEXT, balance REAL)"])
+  (jdbc/execute! *db* ["CREATE TABLE IF NOT EXISTS operations (id INTEGER PRIMARY KEY, type TEXT, cost REAL)"])
+  (jdbc/execute! *db* ["CREATE TABLE IF NOT EXISTS records (id INTEGER PRIMARY KEY, operation_id INTEGER, user_id INTEGER, amount REAL, user_balance REAL, operation_response TEXT, date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, deleted BOOLEAN DEFAULT FALSE)"]))

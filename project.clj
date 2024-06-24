@@ -77,3 +77,12 @@
                   :resource-paths ["env/test/resources"] }
    :profiles/dev {}
    :profiles/test {}})
+:dependencies [[org.clojure/clojure "1.11.1"]
+               ;; other dependencies
+               [ring/ring-mock "0.4.0"]
+               [pjstadig/humane-test-output "0.11.0"]]
+
+:profiles {:dev {:dependencies [[ring/ring-devel "1.9.6"]]
+                 :plugins [[com.jakemccrary/lein-test-refresh "0.24.1"]]}}
+
+:main ^:skip-aot calculator.core
