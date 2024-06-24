@@ -15,7 +15,7 @@
                  [mount "0.1.16"]
                  [expound "0.8.7"]
                  [selmer "1.12.55"]
-                 
+                 [prone "2020-01-17"]
                  ] 
   :source-paths ["src/clj"]
   :profiles {:dev {:dependencies [[com.jakemccrary/lein-test-refresh "0.24.1"]
