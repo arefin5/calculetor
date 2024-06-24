@@ -1,0 +1,1 @@
+["^ ","~$some-middleware",["^ ","~:row",24,"~:col",1,"~:fixed-arities",["~#set",[1]],"~:name","^0","~:ns","~$calculator.middleware.sub","~:top-ns","^7","~:arities",["^ ","~i1",["^ ","~:ret","~:fn","~:arglist-str","[handler]"]],"~:type","^;"],"~:filename","F:\\java\\New folder (2)\\calculetor\\src\\clj\\calculator\\middleware\\middleware.clj"]
