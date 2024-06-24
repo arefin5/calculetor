@@ -85,5 +85,5 @@
 (defn -main [& args]
   (mount/start)
   (create-tables)
-  (http/run-server app {:port 3000})
-  (println "Server is running on port 3000"))
+  (http/run-server app {:port 3100})
+  (println "Server is running on port 3100"))
